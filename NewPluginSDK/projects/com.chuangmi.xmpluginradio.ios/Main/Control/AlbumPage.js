@@ -24,7 +24,7 @@ import {
   Text,
   PixelRatio,
   View,
-  AlertIOS,
+  Alert,
   ActionSheetIOS,
   DeviceEventEmitter,
   TouchableWithoutFeedback,
@@ -333,7 +333,7 @@ class AlbumPage extends React.Component{
               if(channels != undefined){
                  var chs = channels;
                  if(chs.length >= 35) {
-                    AlertIOS.alert(
+                    Alert.alert(
                         '提示',
                         Constants.Channels.addInfo(),
                         [
@@ -385,7 +385,7 @@ class AlbumPage extends React.Component{
               if(channels != undefined){
                   var chs = channels;
                   if(chs.length <=1) {
-                      AlertIOS.alert(
+                      Alert.alert(
                         '提示',
                         Constants.Channels.deleteInfo(),
                         [

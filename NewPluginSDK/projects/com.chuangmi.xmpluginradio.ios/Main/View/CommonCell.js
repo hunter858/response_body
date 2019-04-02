@@ -19,7 +19,7 @@ import {
   Animated,
   Easing,
   View,
-  AlertIOS,
+  Alert,
   TouchableWithoutFeedback,
   DeviceEventEmitter,
 } from 'react-native';
@@ -174,7 +174,7 @@ class CommonCell extends React.Component{
 
                 if(chs.length >= 35) {
                   this.__saving = false;
-                  AlertIOS.alert(
+                  Alert.alert(
                       '提示',
                       Constants.Channels.addInfo(),
                       [
@@ -223,7 +223,7 @@ class CommonCell extends React.Component{
                 var chs = channels;
                 if(chs.length <=1) {
                     this.__saving = false;
-                    AlertIOS.alert(
+                    Alert.alert(
                       '提示',
                       Constants.Channels.deleteInfo(),
                       [

@@ -15,7 +15,7 @@ import {
   ListView,
   Image,
   ImageBackground,
-  AlertIOS,
+  Alert,
   LayoutAnimation,
   ActivityIndicator,
   TouchableWithoutFeedback,
@@ -556,7 +556,7 @@ class NewSortPrograms extends React.Component{
 
       if(this.deleteRows.length >= this.radioPrograms.length) {
 
-          AlertIOS.alert(
+        Alert.alert(
         '提示',
         '收音机中应至少保留一个节目',
         [

@@ -30,7 +30,7 @@ import {
   PixelRatio,
   DeviceEventEmitter,
   LayoutAnimation,
-  AlertIOS,
+  Alert,
   TouchableOpacity,
 } from 'react-native';
 
@@ -362,7 +362,7 @@ class NewClockPage extends React.Component{
       }
 
       if(this.state.clockCounts >= 18 && this.state.edit == undefined) {
-          AlertIOS.alert(
+          Alert.alert(
             '提示',
             '设置的闹铃数量已达上限',
             [
