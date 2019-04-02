@@ -1,0 +1,13 @@
+{
+  "models":"chuangmi.plug.v3|chuangmi.plug.m1",
+  "package_path":"com.chuangmi.plug.hmi202b02",
+  "developer_id":"1206895965",
+  "min_sdk_api_level":10000,
+  "version_code":1,
+  "entrance":{
+    "scene":{
+      "trigger_ids":[],
+      "action_ids":[]
+    }
+  }
+}

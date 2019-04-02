@@ -1,0 +1,13 @@
+{
+  "models":"chuangmi.radio.v2|chuangmi.radio.v1",
+  "package_path":"com.chuangmi.xmpluginradio.ios",
+  "developer_id":"1206895965",
+  "min_sdk_api_level":10000,
+  "version_code":5,
+  "entrance":{
+    "scene":{
+      "trigger_ids":[],
+      "action_ids":[]
+    }
+  }
+}

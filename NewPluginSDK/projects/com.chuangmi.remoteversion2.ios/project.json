@@ -1,0 +1,13 @@
+{
+  "models":"chuangmi.remote.v2|chuangmi.remote.h102c01|chuangmi.remote.h102a02|chuangmi.remote.h102a03|chuangmi.remote.h102b01|chuangmi.remote.h102b02|chuangmi.remote.h102b03",
+  "package_path":"com.chuangmi.remoteversion2.ios",
+  "developer_id":"1206895965",
+  "min_sdk_api_level":10001,
+  "version_code":4,
+  "entrance":{
+    "scene":{
+      "trigger_ids":[],
+      "action_ids":[]
+    }
+  }
+}
