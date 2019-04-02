@@ -67,23 +67,9 @@ class SearchPage extends React.Component{
     componentDidMount(){
       //第一次进入搜索页面需要把值设置到textinput
       this.input.setNativeProps({text:this.props.params });
-
-      this.subscription = DeviceEventEmitter.addListener('SearchPageRightBtnPress',(notification) => {
-          ActionSheetIOS.showActionSheetWithOptions({
-            options: ['定时关闭', '特色闹铃', '取消'],
-            cancelButtonIndex: 2,
-            title: Constants.Channels.sheetTitle(),
-          },
-          (buttonIndex) => {
-             this.sheetBtnHandler(buttonIndex);
-          });
-      });
-
     }
 
     componentWillUnmount(){
-      console.log("搜索组件消失了");
-       this.subscription.remove();
 
        Host.file.writeFile(Service.account.ID + '===' + Device.deviceID + '::history', "" + JSON.stringify(this.local) ).then((result)=>{
         // result

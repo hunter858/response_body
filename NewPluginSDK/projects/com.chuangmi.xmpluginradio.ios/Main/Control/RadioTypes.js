@@ -17,7 +17,6 @@ import {
   Text,
   PixelRatio,
   View,
-  ActionSheetIOS,
   DeviceEventEmitter,
 } from 'react-native';
 
@@ -34,21 +33,10 @@ class RadioTypes extends React.Component{
 
   componentDidMount(){
 
-      this.subscription = DeviceEventEmitter.addListener('RadioTypesRightBtnPress',(notification) => {
-          ActionSheetIOS.showActionSheetWithOptions({
-            options: ['定时关闭', '特色闹铃', '取消'],
-            cancelButtonIndex: 2,
-            title: Constants.Channels.sheetTitle(),
-          },
-          (buttonIndex) => {
-             this.sheetBtnHandler(buttonIndex);
-          });
-      });
-
   }
 
   componentWillUnmount(){
-    this.subscription.remove();
+
   }
 
   sheetBtnHandler(index){

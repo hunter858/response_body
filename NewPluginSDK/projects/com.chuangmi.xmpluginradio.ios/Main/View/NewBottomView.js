@@ -3,7 +3,6 @@
 
 import React,{component} from 'react';
 import {
-  ActionSheetIOS,
   StyleSheet,
   Text,
   View,

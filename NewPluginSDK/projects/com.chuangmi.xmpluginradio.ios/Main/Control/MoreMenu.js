@@ -11,7 +11,6 @@ import {
   Component,
   StatusBar,
   PixelRatio,
-  ActionSheetIOS,
 } from 'react-native';
 import { Host, DeviceEvent ,Device} from "miot";
 import { TitleBarBlack } from 'miot/ui';

@@ -22,7 +22,6 @@ import {
   Text,
   PixelRatio,
   DeviceEventEmitter,
-  ActionSheetIOS,
   View,
 } from 'react-native';
 

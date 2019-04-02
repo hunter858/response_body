@@ -13,7 +13,6 @@ import {
   Text,
   PixelRatio,
   View,
-  ActionSheetIOS,
   TouchableWithoutFeedback,
   LayoutAnimation,
   DeviceEventEmitter,
