@@ -36,7 +36,6 @@ import {
   TouchableOpacity,
   PanResponder,
   StatusBar,
-  ActionSheetIOS,
 } from 'react-native';
 
 /*
@@ -1375,26 +1374,45 @@ class PlayPage extends React.Component{
 
   openActionSheet(){
    if(this.opened){
-     ActionSheetIOS.showActionSheetWithOptions({
-         options:['音乐闹钟','10分钟后停止播放','20分钟后停止播放','30分钟后停止播放',
-           '60分钟后停止播放','90分钟后停止播放','120分钟后停止播放','取消一段时间后停止播放','取消'],
-           cancelButtonIndex:8,
-       title: Constants.Channels.sheetTitle(),
-     },
-     (buttonIndex) => {
-        this.sheetBtnHandler(buttonIndex);
-     });
+
+    Alert.alert(
+      'Alert Title',
+      '请选择需要的操作',
+      [
+        {text: '音乐闹钟', onPress: () => this.sheetBtnHandler(0)},
+        {text: '10分钟后停止播放', onPress: () => this.sheetBtnHandler(1)},
+        {text: '20分钟后停止播放', onPress: () => this.sheetBtnHandler(2)},
+        {text: '30分钟后停止播放', onPress: () => this.sheetBtnHandler(3)},
+        {text: '60分钟后停止播放', onPress: () => this.sheetBtnHandler(4)},
+        {text: '90分钟后停止播放', onPress: () => this.sheetBtnHandler(5)},
+        {text: '120分钟后停止播放', onPress: () => this.sheetBtnHandler(6)},
+        {text: '取消一段时间后停止播放', onPress: () => this.sheetBtnHandler(7)},
+        {text: '取消', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+      ],
+      { cancelable: false }
+    );
+
    }else{
-     ActionSheetIOS.showActionSheetWithOptions({
-         options:['音乐闹钟','10分钟后停止播放','20分钟后停止播放','30分钟后停止播放',
-           '60分钟后停止播放','90分钟后停止播放','120分钟后停止播放','取消'],
-           cancelButtonIndex:7,
-       title: Constants.Channels.sheetTitle(),
-     },
-     (buttonIndex) => {
-        this.sheetBtnHandler1(buttonIndex);
-     });
-   }
+
+
+    Alert.alert(
+      'Alert Title',
+      '请选择需要的操作',
+      [
+        {text: '音乐闹钟', onPress: () => this.sheetBtnHandler1(0)},
+        {text: '10分钟后停止播放', onPress: () => this.sheetBtnHandler1(1)},
+        {text: '20分钟后停止播放', onPress: () => this.sheetBtnHandler1(2)},
+        {text: '30分钟后停止播放', onPress: () => this.sheetBtnHandler1(3)},
+        {text: '60分钟后停止播放', onPress: () => this.sheetBtnHandler1(4)},
+        {text: '90分钟后停止播放', onPress: () => this.sheetBtnHandler1(5)},
+        {text: '120分钟后停止播放',onPress: () => this.sheetBtnHandler1(6)},
+        {text: '取消', onPress: () => console.log('Cancel Pressed'), style: 'cancel'},
+      ],
+      { cancelable: false }
+    );
+
+
+  }
 
  }
 

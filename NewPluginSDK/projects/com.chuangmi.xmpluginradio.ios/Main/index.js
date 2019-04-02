@@ -37,7 +37,6 @@ import SceneMain from './SceneMain';
 /*入口*/
 import NewMainPage from './Control/NewMainPage';
 import AlbumPage from './Control/AlbumPage';
-// import Demo from './Control/Demo';
 
 /*demo*/
 import AnimateViewPage from './Control/AnimateViewPage';
