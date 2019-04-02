@@ -25,7 +25,6 @@ import {
   PixelRatio,
   View,
   Alert,
-  ActionSheetIOS,
   DeviceEventEmitter,
   TouchableWithoutFeedback,
   LayoutAnimation,
@@ -99,20 +98,6 @@ class AlbumPage extends React.Component{
 						});
         });
 
-       this.subscription2 = DeviceEventEmitter.addListener('AlbumPageRightBtnPress',(notification) => {
-         if (this.actionSheetHasShow) {
-           return;
-         }
-         this.actionSheetHasShow = true;
-            ActionSheetIOS.showActionSheetWithOptions({
-              options: ['定时关闭', '特色闹铃', '取消'],
-              cancelButtonIndex: 2,
-              title: Constants.Channels.sheetTitle(),
-            },
-            (buttonIndex) => {
-                this.sheetBtnHandler(buttonIndex);
-            });
-      });
 
     }
 

@@ -21,7 +21,6 @@ import {
   PixelRatio,
   View,
   DeviceEventEmitter,
-  ActionSheetIOS,
   TouchableWithoutFeedback,
   LayoutAnimation,
   ScrollView,
@@ -106,37 +105,18 @@ class AlbumsInSomeCategory extends React.Component{
     
     componentDidMount(){
 
-          this.subscription2 = DeviceEventEmitter.addListener('ChannelsChangeEvent', (event) => {
+      this.subscription2 = DeviceEventEmitter.addListener('ChannelsChangeEvent', (event) => {
 
-            Device.getDeviceWifi().callMethod("get_channels",{"all":0}).then((result)=>{
+        Device.getDeviceWifi().callMethod("get_channels",{"all":0}).then((result)=>{
 
-                const channels = result.result.chs;
-                if(channels != undefined) {
-                  this._radioFavorPrograms = channels;
-                }
-              }).catch(error=>{
-                console.log('error-121-'+JSON.stringify(error));
-              });
+            const channels = result.result.chs;
+            if(channels != undefined) {
+              this._radioFavorPrograms = channels;
+            }
+          }).catch(error=>{
+            console.log('error-121-'+JSON.stringify(error));
           });
-
-        this.subscription = DeviceEventEmitter.addListener('AlbumsInSomeCategoryRightBtnPress',(notification) => {
-          console.log("通知：接收到新页面的通知");
-          // 因为最新版本的MiHome，会弹出两次pop框，如果已经弹出，下次不再弹出
-          if (this.actionSheetHasShow) {
-            console.log("通知：因为已经弹出，直接返回");
-            return;
-          }
-          this.actionSheetHasShow = true;
-          console.log("通知：执行的通知次数");
-          ActionSheetIOS.showActionSheetWithOptions({
-              options: ['定时关闭', '特色闹铃', '取消'],
-              cancelButtonIndex: 2,
-              title: Constants.Channels.sheetTitle(),
-            },
-            (buttonIndex) => {
-              this.sheetBtnHandler(buttonIndex);
-            });
-        });
+      });
 
     }
 
@@ -163,7 +143,6 @@ class AlbumsInSomeCategory extends React.Component{
     componentWillUnmount(){
          
       this.subscription2.remove();
-      this.subscription.remove();
     }
 
     componentWillMount() {
@@ -208,7 +187,6 @@ class AlbumsInSomeCategory extends React.Component{
                 isFromFind: true,
                 title:albumData.album_title
             });
-            // MHPluginSDK.sendEvent('AlbumPageRightBtnPress', {});
 
           }
        }).catch(error=>{

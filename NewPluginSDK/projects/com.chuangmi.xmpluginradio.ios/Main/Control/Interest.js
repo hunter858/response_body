@@ -148,22 +148,11 @@ class Interest extends React.Component{
 
     componentDidMount(){
       // 添加监听器
-      // 不用subscription定义
-      this.subscription = DeviceEventEmitter.addListener('InterestRightBtnPress',(notification) => {
-          ActionSheetIOS.showActionSheetWithOptions({
-            options: ['定时关闭', '特色闹铃', '取消'],
-            cancelButtonIndex: 2,
-            title: Constants.Channels.sheetTitle(),
-          },
-          (buttonIndex) => {
-             this.sheetBtnHandler(buttonIndex);
-          });
-      });
     }
 
     // 移除监听
     componentWillUnmount(){
-       this.subscription.remove();
+      
     }
 
     sheetBtnHandler(index){
