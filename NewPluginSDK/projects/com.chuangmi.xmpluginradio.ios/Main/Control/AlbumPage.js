@@ -96,14 +96,13 @@ class AlbumPage extends React.Component{
 					}).catch(error=>{
 						console.log('error-106 -'+JSON.stringify(error));
 						});
-        });
+      });
 
 
     }
 
     componentWillUnmount(){
     	this.subscription3.remove();
-      this.subscription2.remove();
     }
 
     loadRadioProgresses(){
@@ -877,7 +876,7 @@ class TrackCellView extends React.Component{
 	    				playing: false,
 	    			});
 	    		}
-        });
+    });
 
 		this.subscription2 = DeviceEventEmitter.addListener(Constants.Event.radio_status, (event) => {
 
@@ -894,7 +893,13 @@ class TrackCellView extends React.Component{
 			}
 
 		});
+	}
 
+
+	componentWillUnmount() {
+		this.updateTimer&&clearInterval(this.updateTimer);
+		this.subscription.remove();
+		this.subscription2.remove();
 	}
 
 	getRadioProps(){
@@ -956,12 +961,6 @@ class TrackCellView extends React.Component{
 			});
 	  }
 	  return true;
-	}
-
-	componentWillUnmount() {
-		this.updateTimer&&clearInterval(this.updateTimer);
-		this.subscription.remove();
-		this.subscription2.remove();
 	}
 
 	render() {
